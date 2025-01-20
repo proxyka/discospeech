@@ -51,7 +51,7 @@ class DiscordBot(commands.Bot):
             if not ctx.author.voice:
                 await ctx.send("You must be in a voice channel!")
                 return
-                
+                    
             try:
                 vc = await ctx.author.voice.channel.connect(cls=voice_recv.VoiceRecvClient)
                 sink = TranscriptionSink(
@@ -62,9 +62,7 @@ class DiscordBot(commands.Bot):
                     self.logger,
                     self.config
                 )
-                # Use property setter instead of method
-                sink.voice_client = vc  # Changed from sink.set_voice_client(vc)
-                self.loop.create_task(sink.start_processing())
+                sink.voice_client = vc  # This will start the processing task
                 vc.listen(sink)
                 await ctx.send("Joined and listening!")
             except Exception as e:
