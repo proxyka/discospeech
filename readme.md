@@ -1,8 +1,24 @@
-# DiscoSpeech
+<h1 align="center">
+  <br>
+    DiscoSpeech
+<br>
+</h1>
+
+<p align="center">
+<a href="https://github.com/ajr-dev/discospeech/fork" target="blank">
+<img src="https://img.shields.io/github/forks/ajr-dev/discospeech?style=for-the-badge" alt="discospeech forks"/>
+</a>
+<a href="https://github.com/ajr-dev/discospeech/stargazers" target="blank">
+<img src="https://img.shields.io/github/stars/ajr-dev/discospeech?style=for-the-badge" alt="discospeech stars"/>
+</a>
+<a href="https://github.com/ajr-dev/discospeech/pulls" target="blank">
+<img src="https://img.shields.io/github/issues-pr/ajr-dev/discospeech?style=for-the-badge" alt="discospeech pull-requests"/>
+</a>
+</p>
 
 A Discord bot that listens to voice chat, transcribes speech using Whisper, generates responses using Ollama, and speaks back using ElevenLabs TTS.
 
-## Features
+## 🚀 Features
 
 - Real-time voice transcription using OpenAI's Whisper
 - AI-powered responses using Ollama (local LLM)
@@ -67,7 +83,7 @@ ollama pull mistral
 - `!join` - Bot joins your current voice channel
 - `!leave` - Bot leaves the voice channel
 
-## Usage
+## 💻 Usage
 
 1. Start the Ollama service
 2. Run the bot:
@@ -98,10 +114,39 @@ python main.py
 
 Logs are stored in `logs/bot.log` with automatic rotation at 10MB and keeping 5 backups.
 
-## Contributing
+## Citation
 
-Feel free to open issues or submit pull requests with improvements.
+If you utilize this repository, data in a downstream project, please consider citing it with:
+
+```
+@misc{discospeech,
+  author = {AJR},
+  title = {DiscoSpeech: Realistic discord voice chat AI},
+  year = {2025},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/ajr-dev/discospeech}},
+```
+
+## 🌟 Star history
+
+[![DiscoSpeech Star history Chart](https://api.star-history.com/svg?repos=ajr-dev/discospeech&type=Date)](https://star-history.com/#ajr-dev/discospeech&Date)
 
 ## License
 
 [MIT License](LICENSE)
+
+## 🙇 Acknowledgements
+
+DiscoSpeech couldn't have been built without the help of great software already available. Thank you!
+
+- [ollama](https://github.com/ollama/ollama)
+- https://github.com/openai/whisper
+
+## 🤗 Contributors
+
+This is a community project, a special thanks to our contributors! 🤗
+
+<a href="https://github.com/ajr-dev/discospeech/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ajr-dev/discospeech" />
+</a>
