@@ -123,7 +123,7 @@ class TranscriptionSink(voice_recv.AudioSink):
             # Cleanup file after playing
             try:
                 # Unlink file if cleanup_responses is true
-                if self.config.get('cleanup_responses', False):
+                if self.config.cleanup_responses:
                     response_path.unlink(missing_ok=True)
             except Exception as e:
                 self.logger.error(f"Error cleaning up response file: {e}")
