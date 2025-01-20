@@ -4,8 +4,9 @@ import logging
 from pathlib import Path
 from elevenlabs import Voice, VoiceSettings, play
 from elevenlabs.client import ElevenLabs, AsyncElevenLabs
-from transformers import AutoProcessor, BarkModel
-import scipy
+from bark import SAMPLE_RATE, generate_audio, preload_models
+import scipy.io.wavfile
+import numpy as np
 
 class TTSService:
     def __init__(self, api_key: str, voice_id: str, logger: logging.Logger, config):
@@ -36,22 +37,18 @@ class TTSService:
                 raise
         elif self.tts_service == "bark":
             try:
-                processor = AutoProcessor.from_pretrained("suno/bark")
-                model = BarkModel.from_pretrained("suno/bark")
-
-                voice_preset = "v2/en_speaker_6" # https://suno-ai.notion.site/8b8e8749ed514b0cbf3f699013548683?v=bc67cff786b04b50b3ceb756fd05f68c
-
-                inputs = processor(text, voice_preset=voice_preset)
-
-                audio_array = model.generate(**inputs)
-                audio_array = audio_array.cpu().numpy().squeeze()
-
-                sample_rate = model.generation_config.sample_rate
-                scipy.io.wavfile.write(output_path, rate=sample_rate, data=audio_array)
+                # Generate audio using Bark
+                audio_array = generate_audio(text, history_prompt="v2/en_speaker_6")
+                
+                # Convert to int16 format
+                audio_array = (audio_array * 32767).astype(np.int16)
+                
+                # Save the audio file
+                scipy.io.wavfile.write(output_path, SAMPLE_RATE, audio_array)
                 
                 return output_path
             except Exception as e:
-                self.logger.error(f"TTS error: {e}")
+                self.logger.error(f"Bark TTS error: {str(e)}")
                 raise
         else:
             self.logger.error(f"TTS error: No tts service or incorrect tts service defined in config")
