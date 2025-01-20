@@ -22,7 +22,7 @@ A Discord bot that listens to voice chat, transcribes speech using Whisper, gene
 
 - Real-time voice transcription using OpenAI's Whisper
 - AI-powered responses using Ollama (local LLM)
-- Text-to-speech responses using ElevenLabs
+- Text-to-speech responses using ElevenLabs (cloud) or Bark (local)
 - Automatic audio cleanup and management
 - Configurable logging system
 
@@ -59,9 +59,16 @@ pip install -r requirements.txt
     "voice_id": "YOUR_ELEVENLABS_VOICE_ID",
     "ollama_host": "http://localhost:11434",
     "ollama_model": "llama3.1:latest",
-    "cleanup_responses": false
+    "cleanup_responses": false,
+    "tts_service": "bark" 
 }
 ```
+
+You can either set `tts_service` to:
+- `bark`
+- `elevenlabs`
+
+`elevenlabs_api_key` may be left as is if `tts_service` is not set to `elevenlabs`.
 
 ## Configuration
 
@@ -104,7 +111,7 @@ python main.py
    - Listen to voice chat
    - Transcribe speech in real-time
    - Generate responses using Ollama
-   - Speak responses using ElevenLabs TTS
+   - Speak responses using `ElevenLabs TTS` or a local `bark tts` model
 
 ## Project Structure
 
