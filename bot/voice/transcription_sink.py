@@ -13,7 +13,8 @@ class TranscriptionSink(voice_recv.AudioSink):
                  tts_service: TTSService,
                  ollama_service: OllamaService,
                  temp_dir: Path, 
-                 logger: logging.Logger):
+                 logger: logging.Logger,
+                 config):
         super().__init__()
         self.audio_service = audio_service
         self.tts_service = tts_service
@@ -26,6 +27,7 @@ class TranscriptionSink(voice_recv.AudioSink):
         self.processing_queue = asyncio.Queue()
         self._voice_client = None
         self._loop = asyncio.get_event_loop()
+        self.config = config
 
     @property
     def voice_client(self):
@@ -120,13 +122,8 @@ class TranscriptionSink(voice_recv.AudioSink):
                 
             # Cleanup file after playing
             try:
-                # Load configuration
-                config_path = Path(__file__).parent / 'config.json'
-                with config_path.open() as config_file:
-                    config = json.load(config_file)
-                
                 # Unlink file if cleanup_responses is true
-                if config.get('cleanup_responses', False):
+                if self.config.get('cleanup_responses', False):
                     response_path.unlink(missing_ok=True)
             except Exception as e:
                 self.logger.error(f"Error cleaning up response file: {e}")

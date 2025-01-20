@@ -11,6 +11,7 @@ class Config:
     ollama_model: str = "mistral"
     temp_dir: Path = Path(__file__).parent.parent / 'temp'
     responses_dir: Path = Path(__file__).parent.parent / 'responses'
+    cleanup_responses: bool = False
 
     @classmethod
     def load(cls, path: str) -> 'Config':

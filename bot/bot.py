@@ -59,7 +59,8 @@ class DiscordBot(commands.Bot):
                     self.tts_service,
                     self.ollama_service,
                     self.config.temp_dir,
-                    self.logger
+                    self.logger,
+                    self.config
                 )
                 # Use property setter instead of method
                 sink.voice_client = vc  # Changed from sink.set_voice_client(vc)
