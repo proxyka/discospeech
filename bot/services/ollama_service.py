@@ -40,7 +40,7 @@ class OllamaService:
             messages = [
                 {
                     "role": "system", 
-                    "content": "You are an AI in a voice chat. Respond with natural language like you are actually speaking."
+                    "content": "You are an AI in a voice chat. Respond naturally and casualy like you would speak with a bunch of friend(s)."
                 }
             ]
             
