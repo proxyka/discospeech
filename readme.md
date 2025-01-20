@@ -142,6 +142,8 @@ DiscoSpeech couldn't have been built without the help of great software already 
 
 - [ollama](https://github.com/ollama/ollama)
 - https://github.com/openai/whisper
+- https://github.com/imayhaveborkedit/discord-ext-voice-recv
+- https://github.com/elevenlabs/elevenlabs-python
 
 ## 🤗 Contributors
 
