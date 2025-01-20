@@ -12,6 +12,7 @@ class Config:
     temp_dir: Path = Path(__file__).parent.parent / 'temp'
     responses_dir: Path = Path(__file__).parent.parent / 'responses'
     cleanup_responses: bool = False
+    tts_service: str = "bark"
 
     @classmethod
     def load(cls, path: str) -> 'Config':

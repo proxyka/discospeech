@@ -24,7 +24,8 @@ class DiscordBot(commands.Bot):
         self.tts_service = TTSService(
             config.elevenlabs_api_key,
             config.voice_id,
-            logger
+            logger,
+            config=config
         )
         self.ollama_service = OllamaService(
             config.ollama_host,
