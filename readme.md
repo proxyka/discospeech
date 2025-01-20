@@ -22,7 +22,7 @@ A Discord bot that listens to voice chat, transcribes speech using Whisper, gene
 
 - Real-time voice transcription using OpenAI's Whisper
 - AI-powered responses using Ollama (local LLM)
-- Text-to-speech responses using ElevenLabs (cloud) or Bark (local)
+- Text-to-speech responses using ElevenLabs (cloud) or Bark (local, soon)
 - Automatic audio cleanup and management
 - Configurable logging system
 
@@ -59,16 +59,9 @@ pip install -r requirements.txt
     "voice_id": "YOUR_ELEVENLABS_VOICE_ID",
     "ollama_host": "http://localhost:11434",
     "ollama_model": "llama3.1:latest",
-    "cleanup_responses": false,
-    "tts_service": "bark" 
+    "cleanup_responses": false
 }
 ```
-
-You can either set `tts_service` to:
-- `bark`
-- `elevenlabs`
-
-`elevenlabs_api_key` may be left as is if `tts_service` is not set to `elevenlabs`.
 
 ## Configuration
 
@@ -157,7 +150,6 @@ DiscoSpeech couldn't have been built without the help of great software already 
 - [whisper](https://github.com/openai/whisper)
 - https://github.com/imayhaveborkedit/discord-ext-voice-recv
 - [elevenlabs](https://github.com/elevenlabs/elevenlabs-python)
-- [bark](https://github.com/suno-ai/bark)
 
 ## 🤗 Contributors
 
