@@ -154,9 +154,10 @@ If you utilize this repository, data in a downstream project, please consider ci
 DiscoSpeech couldn't have been built without the help of great software already available. Thank you!
 
 - [ollama](https://github.com/ollama/ollama)
-- https://github.com/openai/whisper
+- [whisper](https://github.com/openai/whisper)
 - https://github.com/imayhaveborkedit/discord-ext-voice-recv
-- https://github.com/elevenlabs/elevenlabs-python
+- [elevenlabs](https://github.com/elevenlabs/elevenlabs-python)
+- [bark](https://github.com/suno-ai/bark)
 
 ## 🤗 Contributors
 
