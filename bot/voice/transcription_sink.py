@@ -108,13 +108,13 @@ class TranscriptionSink(voice_recv.AudioSink):
             # Play audio
             audio_source = discord.FFmpegPCMAudio(
                 str(response_path),
-                options='-filter:a volume=0.8'
+                options='-filter:a volume=0.5'
             )
             self._voice_client.play(
                 audio_source, 
                 after=lambda e: self.logger.error(f"Error playing audio: {e}") if e else None
             )
-            self.logger.info(f"Playing response through voice client at 80% volume")
+            self.logger.info(f"Playing response through voice client at 50% volume")
             
             # Wait for audio to finish before cleanup
             while self._voice_client.is_playing():
