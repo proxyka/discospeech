@@ -1,0 +1,8 @@
+{
+    "discord_token": "YOUR_DISCORD_BOT_TOKEN",
+    "elevenlabs_api_key": "YOUR_ELEVENLABS_API_KEY",
+    "voice_id": "YOUR_ELEVENLABS_VOICE_ID",
+    "ollama_host": "http://localhost:11434",
+    "ollama_model": "llama3.1:latest",
+    "cleanup_responses": false
+}

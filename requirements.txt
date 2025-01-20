@@ -1,0 +1,9 @@
+discord.py 
+openai-whisper 
+elevenlabs 
+numpy
+discord.py[voice]
+discord-ext-voice-recv
+torch
+aiodns
+aiohttp
