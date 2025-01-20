@@ -26,6 +26,12 @@ A Discord bot that listens to voice chat, transcribes speech using Whisper, gene
 - Automatic audio cleanup and management
 - Configurable logging system
 
+## Limits
+
+- Currently not group chat friendly
+- Not scalable to more servers at once
+- No local tts model option
+
 ## Prerequisites
 
 - Python 3.8+
