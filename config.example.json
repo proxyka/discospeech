@@ -4,5 +4,6 @@
     "voice_id": "YOUR_ELEVENLABS_VOICE_ID",
     "ollama_host": "http://localhost:11434",
     "ollama_model": "llama3.1:latest",
-    "cleanup_responses": false
+    "cleanup_responses": true,
+    "tts_service": "bark"
 }

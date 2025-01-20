@@ -16,13 +16,13 @@
 </a>
 </p>
 
-A Discord bot that listens to voice chat, transcribes speech using Whisper, generates responses using Ollama, and speaks back using ElevenLabs TTS.
+A Discord bot that listens to voice chat, transcribes speech using Whisper, generates responses using Ollama, and speaks back using ElevenLabs or Bark (soon) TTS.
 
 ## 🚀 Features
 
 - Real-time voice transcription using OpenAI's Whisper
 - AI-powered responses using Ollama (local LLM)
-- Text-to-speech responses using ElevenLabs
+- Text-to-speech responses using ElevenLabs (cloud) or Bark (local, soon)
 - Automatic audio cleanup and management
 - Configurable logging system
 
@@ -104,7 +104,7 @@ python main.py
    - Listen to voice chat
    - Transcribe speech in real-time
    - Generate responses using Ollama
-   - Speak responses using ElevenLabs TTS
+   - Speak responses using `ElevenLabs TTS` or a local `bark tts` model
 
 ## Project Structure
 
@@ -147,9 +147,9 @@ If you utilize this repository, data in a downstream project, please consider ci
 DiscoSpeech couldn't have been built without the help of great software already available. Thank you!
 
 - [ollama](https://github.com/ollama/ollama)
-- https://github.com/openai/whisper
+- [whisper](https://github.com/openai/whisper)
 - https://github.com/imayhaveborkedit/discord-ext-voice-recv
-- https://github.com/elevenlabs/elevenlabs-python
+- [elevenlabs](https://github.com/elevenlabs/elevenlabs-python)
 
 ## 🤗 Contributors
 
